@@ -74,6 +74,6 @@ const sendInstagramMessage = async (username: string, password: string, recipien
 
 const config = getConfig()
 
-sendInstagramMessage(config.username, config.password, config.recipient, config.message);
-/*schedule.scheduleJob('0 * * * *', () => {
-});*/
+schedule.scheduleJob('0 * * * *', async () => {
+   await sendInstagramMessage(config.username, config.password, config.recipient, config.message);
+});
